@@ -518,6 +518,15 @@ public class JobConfigGenerator implements IGenerator {
     {
       boolean _isMatrixJob_2 = this.isMatrixJob(c);
       if (_isMatrixJob_2) {
+        _builder.append("  ");
+        _builder.append("<executionStrategy class=\"hudson.matrix.DefaultMatrixExecutionStrategyImpl\">");
+        _builder.newLine();
+        _builder.append("            ");
+        _builder.append("<runSequentially>false</runSequentially>");
+        _builder.newLine();
+        _builder.append("          ");
+        _builder.append("</executionStrategy>");
+        _builder.newLine();
         _builder.append("</matrix-project>");
         _builder.newLine();
       } else {

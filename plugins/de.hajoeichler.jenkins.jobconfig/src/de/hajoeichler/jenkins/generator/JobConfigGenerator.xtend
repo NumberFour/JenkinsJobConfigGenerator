@@ -252,6 +252,9 @@ class JobConfigGenerator implements IGenerator {
 		  «publishers(c)»
 		  «wrappers(c)»
 		«IF c.isMatrixJob»
+		  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+            <runSequentially>false</runSequentially>
+          </executionStrategy>
 		</matrix-project>
 		«ELSE»
 		</project>
